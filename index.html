@@ -16,12 +16,13 @@
   <body>
     <div class="weather-app-container">
       <header>
-        <form class="search-form">
+        <form class="search-form" id="search-form">
           <input
             type="search"
             placeholder="Enter a city.."
             required
             class="search-form-input"
+            id="search-form-input"
           />
           <input type="submit" value="Search" class="search-form-button" />
         </form>
@@ -29,7 +30,7 @@
       <main>
         <div class="current-weather">
           <div>
-            <h1 class="current-location">Bristol</h1>
+            <h1 class="current-location" id="current-location">Bristol</h1>
             <p class="current-conditions">
               Wednesday 14:40, broken clouds
               <br />
@@ -59,5 +60,6 @@
         </a>
       </footer>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
