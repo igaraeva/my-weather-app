@@ -66,6 +66,7 @@ header {
   display: flex;
   justify-content: space-between;
   color: #00204a;
+  padding-right: 15px;
 }
 
 .current-temperature-value {
