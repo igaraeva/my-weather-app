@@ -1,7 +1,5 @@
 body {
-  background-image: url("sky.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: #8bc6ec;
   font-family: "Gelasio", serif;
 }
 .weather-app-container {
