@@ -1,5 +1,4 @@
 function displayWeather(response) {
-  console.log(response.data);
   let currentLocation = document.querySelector("#current-location");
   let currentTemperature = document.querySelector("#current-temperature-value");
   let temperature = response.data.temperature.current;

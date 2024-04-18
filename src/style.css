@@ -1,5 +1,7 @@
 body {
-  background: #8bc6ec;
+  background-image: url("sky.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   font-family: "Gelasio", serif;
 }
 .weather-app-container {
@@ -66,7 +68,6 @@ header {
   display: flex;
   justify-content: space-between;
   color: #00204a;
-  padding-right: 15px;
 }
 
 .current-temperature-value {
