@@ -15,7 +15,6 @@ function displayWeather(response) {
   humidity.innerHTML = `${response.data.temperature.humidity}%`;
   windSpeed.innerHTML = `${response.data.wind.speed} m/sec`;
   currentTime.innerHTML = formatDate(date);
-
   weatherIcon.innerHTML = `<img src="${response.data.condition.icon_url}" />`;
 }
 
@@ -48,7 +47,33 @@ function searchCityWeather(event) {
   searchLocation(searchFormInput.value);
 }
 
+function displayForecast() {
+  let forecastHtml = "";
+  let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      ` <div class="weather-forecast-day">
+      <div class="weather-forecast-date">${day}</div>
+      <img
+        src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/rain-day.png"
+        alt=""
+        width="40"
+        class="weather-forecast-icon"
+      />
+      <div class="weather-forecast-temperatures">
+        <div class="weather-forecast-temperature-max">17°</div>
+        <div class="weather-forecast-temperature-min">10°</div>
+      </div>
+    </div>`;
+  });
+
+  let weatherForecast = document.querySelector("#weather-forecast");
+  weatherForecast.innerHTML = forecastHtml;
+}
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchCityWeather);
 
-searchLocation("London");
+searchLocation("Bristol");
+displayForecast();
