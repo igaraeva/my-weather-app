@@ -16,6 +16,8 @@ function displayWeather(response) {
   windSpeed.innerHTML = `${response.data.wind.speed} m/sec`;
   currentTime.innerHTML = formatDate(date);
   weatherIcon.innerHTML = `<img src="${response.data.condition.icon_url}" />`;
+
+  getForecast(response.data.city);
 }
 
 function formatDate(date) {
@@ -34,6 +36,7 @@ function formatDate(date) {
 
   return `${day} ${hours}:${minutes}`;
 }
+
 function searchLocation(city) {
   let apiKey = "51f9883450a0f1682ta31o8477291fb1";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}}&key=${apiKey}&units=metric`;
@@ -47,7 +50,14 @@ function searchCityWeather(event) {
   searchLocation(searchFormInput.value);
 }
 
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "51f9883450a0f1682ta31o8477291fb1";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
+function displayForecast(response) {
+  console.log(response.data);
+
   let forecastHtml = "";
   let days = ["Sat", "Sun", "Mon", "Tue", "Wed"];
 
@@ -72,8 +82,8 @@ function displayForecast() {
   let weatherForecast = document.querySelector("#weather-forecast");
   weatherForecast.innerHTML = forecastHtml;
 }
+
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", searchCityWeather);
 
 searchLocation("Bristol");
-displayForecast();
