@@ -73,7 +73,7 @@ function displayForecast(response) {
         class="weather-forecast-icon"
       />
       <div class="weather-forecast-temperatures">
-        <div class="weather-forecast-temperature-max">17°</div>
+        <div class="weather-forecast-temperature-max"><strong>17°</strong></div>
         <div class="weather-forecast-temperature-min">10°</div>
       </div>
     </div>`;
