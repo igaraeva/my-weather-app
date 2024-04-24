@@ -49,7 +49,7 @@ main {
 }
 .current-weather {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .current-location {
@@ -73,14 +73,13 @@ main {
 .current-weather-icon {
   width: 100px;
   height: 100px;
-  margin-top: 10px;
 }
 .current-temperature-value {
   font-size: 80px;
   font-weight: 700;
 }
 .current-temperature-sign {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 100;
   margin-top: 20px;
 }
@@ -88,7 +87,7 @@ main {
 .weather-forecast {
   display: flex;
   justify-content: space-around;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 .weather-forecast-date {
   color: rgb(117, 117, 117, 0.8);
