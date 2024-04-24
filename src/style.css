@@ -1,5 +1,6 @@
 body {
-  background-color: #8bc6ec;
+  background: url("sky.jpg");
+  background-size: cover;
 
   font-family: "Gelasio", serif;
 }
